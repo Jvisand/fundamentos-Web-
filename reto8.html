@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto #8 - Registro de Ventas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/reto8.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">Menu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Retos    </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item text-black" href="reto1.html">Reto 1</a></li>
+                                <li><a class="dropdown-item text-black" href="reto2.html">Reto 2</a></li>
+                                <li><a class="dropdown-item text-black" href="reto3.html">Reto 3</a></li>
+                                <li><a class="dropdown-item text-black" href="reto4.html">Reto 4</a></li>
+                                <li><a class="dropdown-item text-black" href="reto5.html">Reto 5</a></li>
+                                <li><a class="dropdown-item text-black" href="reto6.html">Reto 6</a></li>
+                                <li><a class="dropdown-item text-black" href="reto7.html">Reto 7</a></li>
+                                <li><a class="dropdown-item text-black" href="reto8.html">Reto 8</a></li>
+                                <li><a class="dropdown-item text-black" href="reto9.html">Reto 9</a></li>
+                                <li><a class="dropdown-item text-black" href="reto10.html">Reto 10</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    
+    <section>
+
+        <div class="container mt-5">
+            <h1>Registro de Ventas</h1>
+            <form id="ventaForm">
+                <div class="mb-3">
+                    <label for="vendedor" class="form-label">Vendedor:</label>
+                    <input type="text" class="form-control" id="vendedor" required>
+                </div>
+                <div class="mb-3">
+                    <label for="numVentas" class="form-label">Número de Ventas:</label>
+                    <input type="number" class="form-control" id="numVentas" required>
+                </div>
+                <div class="mb-3">
+                    <label for="totalVentas" class="form-label">Total de Dinero por Ventas:</label>
+                    <input type="number" class="form-control" id="totalVentas" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar Vendedor</button>
+            </form>
+    
+            <div class="mt-4">
+                <h2>Consultar Ventas</h2>
+                <select id="ventasSelect" class="form-select"></select>
+                <div id="ventaDetalles" class="mt-3"></div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer class="bg-primary py-3 text-center mt-auto fixed-bottom">
+        <p class="mb-0 text-black">&copy;   Derechos reservados 2025</p>
+    </footer>
+    
+    <script src="js/reto8.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
+
+</body>
+</html>

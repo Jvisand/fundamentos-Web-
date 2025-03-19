@@ -1,0 +1,10 @@
+#imagenCoche img {
+    max-height: 600px;
+    width: auto; 
+    display: block; 
+    margin-left: auto;
+    margin-right: auto; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    margin-bottom: 15px; 
+}

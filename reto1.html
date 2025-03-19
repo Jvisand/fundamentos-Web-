@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 1 | Javier Sequeira</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reto1.css">
+</head>
+
+<body>
+
+    <main>
+        <header>
+            <nav class="navbar navbar-expand-lg bg-primary">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="#">Menu</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active text-white" aria-current="page" href="index.html">Home</a>
+                            </li>
+    
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Retos    </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item text-black" href="reto1.html">Reto 1</a></li>
+                                    <li><a class="dropdown-item text-black" href="reto2.html">Reto 2</a></li>
+                                    <li><a class="dropdown-item text-black" href="reto3.html">Reto 3</a></li>
+                                    <li><a class="dropdown-item text-black" href="reto4.html">Reto 4</a></li>
+                                    <li><a class="dropdown-item text-black" href="reto5.html">Reto 5</a></li>
+                                    <li><a class="dropdown-item text-black" href="reto6.html">Reto 6</a></li>
+                                    <li><a class="dropdown-item text-black" href="reto7.html">Reto 7</a></li>
+                                    <li><a class="dropdown-item text-black" href="reto8.html">Reto 8</a></li>
+                                    <li><a class="dropdown-item text-black" href="reto9.html">Reto 9</a></li>
+                                    <li><a class="dropdown-item text-black" href="reto10.html">Reto 10</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="sct-container">
+            <section>
+                <form action="" method="get">
+
+                    <div class="titulo-login">
+                        <h1>Ingrese los siguientes datos <br> <span>para la factura</span></h1>
+                    </div>
+
+                    <div class="inputs-container">
+
+                        <div class='usuario'>
+                            <label for='usuario'>Nombre</label>
+                            <input id='usuario' name='usuario' type='text' placeholder="Ingrese su usuario" />
+                        </div>
+
+                        <div class="articulo">
+                            <label for="articulo">Artículo</label>
+                            <input id="articulo" type="text">
+                        </div>
+
+                        <div class="articulo">
+                            <label for="precio">Precio</label>
+                            <input id="precio" type="text">
+                        </div>
+
+                        <div class="cantidad">
+                            <label for='cantidad'>Cantidad</label>
+                            <input id="cantidad" type="number" name="cantidad" placeholder="Eliga la cantidad de articulos">
+                        </div>
+
+                        <div class="buttons">
+                            <button type="button" onclick="agregar()" class="button1" id="button1">Agregar</button>
+                            <button type="button" onclick="cancelar()" class="button2" id="button2">Cancelar</button>
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+            <section>
+                <div class="sct-two-container">
+                    <div class="titulo-login">
+                        <h1>Detalles de la factura a continuación:</h1>
+                    </div>
+
+                    <div class="listado-articulo">
+                        <p id="campoNombre">Nombre del cliente: </p>
+                        <p id="campoArticulo">Artículo comprado: </p>
+                        <p id="campoCantidad">Cantidad: </p>
+                        <p id="campoPrecio">Precio: </p>
+                        <p id="campoSubtotal">Subtotal: </p>
+                        <p id="campoIVA">IVA 13%: </p>
+                        <p id="campoServicio">Servicio 5%: </p>
+                        <p id="campoTotal">Total a pagar: </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-primary py-3 text-center mt-auto fixed-bottom">
+        <p class="mb-0 text-black">&copy;   Derechos reservados 2025</p>
+    </footer>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+    <script src="js/reto1.js"></script>
+</body>
+
+</html>

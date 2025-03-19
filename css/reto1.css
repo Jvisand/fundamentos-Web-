@@ -1,0 +1,89 @@
+.sct-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 86vh;
+}
+
+.titulo-login {
+    font-size: 2em;
+    margin-bottom: 7vh;
+    text-align: center;
+}
+
+.titulo-login span {
+    display: block;
+    margin-top: 10px;
+}
+
+.usuario,
+.articulo,
+.cantidad,
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.usuario input[type="text"],
+select,
+.cantidad input[type="number"] {
+    height: 30px;
+    text-align: center;
+    margin: 2vh 0;
+}
+
+button {
+    margin: 5vh 2%;
+    width: 30%;
+    height: 5vh;
+    border-radius: 3%;
+    border: none;
+    color: whitesmoke;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: green;
+}
+
+.button2 {
+    background-color: #c5271b;
+}
+
+button:hover {
+    opacity: 50%;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+figure img {
+    height: 600px;
+}
+
+.titulo-bienvenida {
+    font-size: 3em;
+    margin-bottom: 7vh;
+    text-align: center;
+}
+
+.sct-two-container {
+    margin-bottom: 16vh;
+}
+
+.listado-articulo {
+    font-size: 1.5em;
+}
+
+.listado-articulo p {
+    margin-bottom: 10px;
+}

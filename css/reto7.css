@@ -1,0 +1,61 @@
+
+.container {
+    width: 80%; 
+    margin: 20px auto; 
+    padding: 20px;
+    box-sizing: border-box; 
+}
+
+.map-container {
+    position: relative;
+    display: flex;
+    justify-content: center; 
+}
+
+.descripcion-desplegable {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    display: none;
+}
+
+
+#descripcion-polea {
+    top: 5%;
+    left: 5%;
+    width: 250px;
+}
+
+#descripcion-palanca {
+    top: 5%;
+    left: 30%;
+    width: 250px;
+}
+
+#descripcion-rueda {
+    top: 5%;
+    right: 5%;
+    width: 250px;
+}
+
+#descripcion-cuna {
+    bottom: 5%;
+    left: 5%;
+    width: 250px;
+}
+
+#descripcion-plano {
+    bottom: 5%;
+    left: 30%;
+    width: 250px;
+}
+
+#descripcion-tornillo {
+    bottom: 5%;
+    right: 5%;
+    width: 250px;
+}

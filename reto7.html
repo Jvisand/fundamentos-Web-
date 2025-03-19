@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto #7 - Máquinas Simples</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/reto7.css">
+</head>
+<body>
+
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">Menu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Retos    </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item text-black" href="reto1.html">Reto 1</a></li>
+                                <li><a class="dropdown-item text-black" href="reto2.html">Reto 2</a></li>
+                                <li><a class="dropdown-item text-black" href="reto3.html">Reto 3</a></li>
+                                <li><a class="dropdown-item text-black" href="reto4.html">Reto 4</a></li>
+                                <li><a class="dropdown-item text-black" href="reto5.html">Reto 5</a></li>
+                                <li><a class="dropdown-item text-black" href="reto6.html">Reto 6</a></li>
+                                <li><a class="dropdown-item text-black" href="reto7.html">Reto 7</a></li>
+                                <li><a class="dropdown-item text-black" href="reto8.html">Reto 8</a></li>
+                                <li><a class="dropdown-item text-black" href="reto9.html">Reto 9</a></li>
+                                <li><a class="dropdown-item text-black" href="reto10.html">Reto 10</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="container mt-5 text-center">
+            <h1>Máquinas Simples</h1>
+            <p>Haz clic en las imágenes para aprender más sobre cada máquina simple:</p>
+    
+            <br>
+    
+            <br>
+    
+            <div class="map-container">
+                <img src="img/Maquinas simples.jpg" usemap="#image-map" class="img-fluid">
+    
+                <map name="image-map">
+                    <area target="_self" alt="Polea" title="Polea" href="#" coords="47,5,172,174" shape="rect" data-target="descripcion-polea">
+                    <area target="_self" alt="Palanca" title="Palanca" href="#" coords="225,42,359,166" shape="rect" data-target="descripcion-palanca">
+                    <area target="_self" alt="Rueda y eje (torno)" title="Rueda y eje (torno)" href="#" coords="391,41,567,167" shape="rect" data-target="descripcion-rueda">
+                    <area target="_self" alt="Cuña" title="Cuña" href="#" coords="55,183,156,304" shape="rect" data-target="descripcion-cuna">
+                    <area target="_self" alt="Plano inclinado" title="Plano inclinado" href="#" coords="198,183,371,298" shape="rect" data-target="descripcion-plano">
+                    <area target="_self" alt="Tornillo" title="Tornillo" href="#" coords="416,188,554,295" shape="rect" data-target="descripcion-tornillo">
+                </map>
+    
+                <div id="descripcion-polea" class="descripcion-desplegable">
+                    <h3>Polea</h3>
+                    <p>Una polea es una rueda con una cuerda o cable que pasa por ella. Se utiliza para levantar objetos pesados con menos esfuerzo.</p>
+                    <button class="btn btn-sm btn-secondary cerrar-descripcion" data-target="descripcion-polea">Cerrar</button>
+                </div>
+    
+                <div id="descripcion-palanca" class="descripcion-desplegable">
+                    <h3>Palanca</h3>
+                    <p>Una palanca es una barra rígida que gira sobre un punto de apoyo. Se utiliza para amplificar la fuerza y levantar objetos pesados.</p>
+                    <button class="btn btn-sm btn-secondary cerrar-descripcion" data-target="descripcion-palanca">Cerrar</button>
+                </div>
+    
+                <div id="descripcion-rueda" class="descripcion-desplegable">
+                    <h3>Torno</h3>
+                    <p>Es un dispositivo mecánico generalmente utilizado para mover verticalmente grandes pesos. Está formado por una cuerda de la que se fija uno de los extremos a la carga a desplazar y el otro extremo a un cilindro que es a su vez fijado de tal manera que solo puede rotar en torno a su eje principal. Actuando el cilindro con una manivela la cuerda se enrolla sobre él, consiguiendo subir la carga.</p>
+                    <button class="btn btn-sm btn-secondary cerrar-descripcion" data-target="descripcion-rueda">Cerrar</button>
+                </div>
+    
+                <div id="descripcion-cuna" class="descripcion-desplegable">
+                    <h3>Cuña</h3>
+                    <p>Una cuña es un objeto puntiagudo que se utiliza para separar o dividir objetos.</p>
+                    <button class="btn btn-sm btn-secondary cerrar-descripcion" data-target="descripcion-cuna">Cerrar</button>
+                </div>
+    
+                <div id="descripcion-plano" class="descripcion-desplegable">
+                    <h3>Plano inclinado</h3>
+                    <p>Un plano inclinado es una superficie plana que se eleva en un ángulo. Se utiliza para mover objetos a diferentes alturas con menos esfuerzo.</p>
+                    <button class="btn btn-sm btn-secondary cerrar-descripcion" data-target="descripcion-plano">Cerrar</button>
+                </div>
+    
+                <div id="descripcion-tornillo" class="descripcion-desplegable">
+                    <h3>Tornillo</h3>
+                    <p>Un tornillo es un plano inclinado enrollado alrededor de un cilindro. Se utiliza para sujetar objetos o convertir movimiento giratorio en movimiento lineal.</p>
+                    <button class="btn btn-sm btn-secondary cerrar-descripcion" data-target="descripcion-tornillo">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="bg-primary py-3 text-center mt-auto fixed-bottom">
+        <p class="mb-0 text-black">&copy;   Derechos reservados 2025</p>
+    </footer>
+    
+
+    <script src="js/reto7.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
