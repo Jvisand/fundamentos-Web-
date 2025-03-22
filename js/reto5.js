@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const financiamientoSelect = document.getElementById('financiamiento');
     const plazoSelect = document.getElementById('plazo');
     const calcularBtn = document.getElementById('calcularBtn');
-    const costoEstimadoDiv = document.getElementById('costoEstimado');
     const imagenCocheDiv = document.getElementById('imagenCoche');
 
     const costosBase = {
@@ -16,15 +15,19 @@ document.addEventListener('DOMContentLoaded', function() {
         'sedan': 'img/sedan.jpg',
         'suv': 'img/suv.jpg',
         'deportivo': 'img/deportivo.jpg'
-        
     };
 
     const tasasFinanciamiento = {
-        'banco_nacional': 0.05, 
-        'banco_costa_rica': 0.06, 
-        'banco_popular': 0.07, 
-        'bac_san_jose': 0.08 
+        'banco_nacional': 0.05,
+        'banco_costa_rica': 0.06,
+        'banco_popular': 0.07,
+        'bac_san_jose': 0.08
     };
+
+    // Función para habilitar/deshabilitar el botón de calcular
+    function actualizarBotonCalcular() {
+        calcularBtn.disabled = !(modeloSelect.value && financiamientoSelect.value && plazoSelect.value);
+    }
 
     modeloSelect.addEventListener('change', function() {
         const modeloSeleccionado = this.value;
@@ -32,8 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         financiamientoSelect.value = '';
         plazoSelect.disabled = true;
         plazoSelect.value = '';
-        calcularBtn.disabled = true;
-        costoEstimadoDiv.textContent = '';
         imagenCocheDiv.innerHTML = '';
 
         if (modeloSeleccionado) {
@@ -44,49 +45,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             const precioBase = costosBase[modeloSeleccionado];
             if (precioBase !== undefined) {
-                const precioFormateado = precioBase.toLocaleString(undefined, { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 });
+                const precioFormateado = precioBase.toLocaleString(undefined, {
+                    style: 'currency',
+                    currency: 'USD',
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                });
                 const precioTexto = `<p class="mt-2">Precio Base: ${precioFormateado}</p>`;
                 imagenCocheDiv.innerHTML += precioTexto;
             }
         }
+        actualizarBotonCalcular(); // Actualizar el botón al cambiar el modelo
     });
 
     financiamientoSelect.addEventListener('change', function() {
         plazoSelect.disabled = !this.value;
         plazoSelect.value = '';
-        calcularBtn.disabled = true;
-        costoEstimadoDiv.textContent = ''; 
+        actualizarBotonCalcular(); // Actualizar el botón al cambiar el financiamiento
     });
 
     plazoSelect.addEventListener('change', function() {
-        calcularBtn.disabled = false;
-        costoEstimadoDiv.textContent = ''; 
-
-        const modeloSeleccionado = modeloSelect.value;
-        const financiamientoSeleccionado = financiamientoSelect.value;
-        const plazoSeleccionado = this.value;
-
-        if (modeloSeleccionado && financiamientoSeleccionado && plazoSeleccionado) {
-            const costoBase = costosBase[modeloSeleccionado] || 0;
-            const tasaAnual = tasasFinanciamiento[financiamientoSeleccionado] || 0;
-            const plazoAnos = parseInt(plazoSeleccionado);
-            const primaPorcentaje = 0.05;
-            const montoFinanciado = costoBase * (1 - primaPorcentaje);
-            const tasaMensual = tasaAnual / 12;
-            const numeroPagos = plazoAnos * 12;
-
-            let cuotaMensual = 0;
-            if (tasaMensual > 0) {
-                cuotaMensual = (montoFinanciado * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -numeroPagos));
-            } else {
-                cuotaMensual = montoFinanciado / numeroPagos; 
-            }
-
-            
-            const cuotaFormateada = cuotaMensual.toLocaleString(undefined, { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 });
-            const infoCuota = `<p class="mt-2">Cuota Mensual Estimada (prima del 5%): ${cuotaFormateada} (a ${plazoAnos} años con ${obtenerNombreBanco(financiamientoSeleccionado)})</p>`;
-            costoEstimadoDiv.innerHTML = infoCuota; 
-        }
+        actualizarBotonCalcular(); // Actualizar el botón al cambiar el plazo
     });
 
     calcularBtn.addEventListener('click', function() {
@@ -107,13 +86,29 @@ document.addEventListener('DOMContentLoaded', function() {
             if (tasaMensual > 0) {
                 cuotaMensual = (montoFinanciado * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -numeroPagos));
             } else {
-                cuotaMensual = montoFinanciado / numeroPagos; 
+                cuotaMensual = montoFinanciado / numeroPagos;
             }
 
-            const cuotaFormateada = cuotaMensual.toLocaleString(undefined, { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 });
-            costoEstimadoDiv.innerHTML = `<p>Cuota Mensual Estimada (prima del 5%): ${cuotaFormateada} (a ${plazoAnos} años con ${obtenerNombreBanco(financiamientoSeleccionado)})</p>`;
+            const cuotaFormateada = cuotaMensual.toLocaleString(undefined, {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+
+            Swal.fire({
+                title: 'Cuota Mensual Estimada',
+                html: `<p>Cuota Mensual Estimada (prima del 5%): ${cuotaFormateada} (a ${plazoAnos} años con ${obtenerNombreBanco(financiamientoSeleccionado)})</p>`,
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+            });
         } else {
-            costoEstimadoDiv.textContent = 'Por favor, selecciona un modelo, una opción de financiamiento y un plazo.';
+            Swal.fire({
+                title: 'Error',
+                text: 'Por favor, selecciona un modelo, una opción de financiamiento y un plazo.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
         }
     });
 
